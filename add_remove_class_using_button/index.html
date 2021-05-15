@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Add or Remove the class on Button click</title>
+  <style id="css">
+    .article {
+
+      color: pink;
+
+    }
+
+    .active {
+
+      background: blue;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="article">
+
+    <p>This is article 1</p>
+    <p>This is article 2</p>
+    <button data-action="add">Add</button> <button data-action="remove">Remove</button>
+
+  </div>
+
+  <script id="javascript">
+    console.clear();
+
+    const btn = document.querySelector(".article");
+
+
+
+
+    btn.addEventListener("click", (e) => {
+
+      if (e.target.tagName == "BUTTON") {
+
+        if (e.target.getAttribute("data-action") == 'add')
+          btn.classList.add("active");
+
+        if (e.target.getAttribute("data-action") == 'remove')
+          btn.classList.remove("active");
+
+      }
+
+
+    });
+  </script>
+
+</body>
+
+</html>

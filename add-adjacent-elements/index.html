@@ -110,7 +110,7 @@ function insertTask(id, action, parent){
     let newTask = prompt("Enter new Task: ");
      
    
-        let newtaskUI = buildNewTaskUI(newTask);
+   let newtaskUI = buildNewTaskUI(newTask);
     
     if("add-above" == action){  
       parent.insertAdjacentHTML('beforebegin', newtaskUI);   

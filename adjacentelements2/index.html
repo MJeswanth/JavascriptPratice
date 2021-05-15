@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Aadd to Adjacent elements</title>
+<style id="css">
+li{
+
+list-style:none;
+}
+</style>
+</head>
+<body>
+
+<div id="takslist">
+
+<ui id="tasks">
+  
+  <li class="task-items">
+    
+  <button data-action="above" id="1"> Add Above</button>
+  <button data-action="below" id="1"> Add below</button>
+
+    
+  </li>
+  
+</ui>
+
+<p></p>
+
+</div>
+
+
+<script id="javascript">
+console.clear();
+const btn = document.querySelector("#tasks");
+console.log(btn);
+
+btn.addEventListener("click", e =>{
+
+const target = e.target;
+
+
+
+if(target.tagName == 'BUTTON'){
+
+  const btnAction = target.getAttribute('data-action');
+  console.log(target.parentNode);
+  addTask(btnAction, target.parentNode);
+
+}
+
+
+});
+
+function addTask( action, parent ){
+
+let newTask = prompt("Enter the task");
+  
+let taskUI = buildUIforTask(newTask);
+
+    if("above"==action){
+  
+    parent.insertAdjacentHTML('beforebegin', taskUI);
+
+   }
+
+ if("below"==action){
+   
+   parent.insertAdjacentHTML('afterend', taskUI);
+
+   }
+
+}
+
+function buildUIforTask(newTask){
+
+
+const id = document.querySelectorAll(".task-items").length;
+let html = `<li id="${id}" >${newTask}<button data-action="above" > Add Above</button>
+  <button data-action="below"> Add below</button></li>`;
+
+return html;
+
+}
+</script>
+
+
+<script id="css" type="text/css">li{
+
+list-style:none;
+}</script>
+
+<script id="javascript" type="text/javascript">console.clear();
+const btn = document.querySelector("#tasks");
+console.log(btn);
+
+btn.addEventListener("click", e =>{
+
+const target = e.target;
+
+
+
+if(target.tagName == 'BUTTON'){
+
+  const btnAction = target.getAttribute('data-action');
+  console.log(target.parentNode);
+  addTask(btnAction, target.parentNode);
+
+}
+
+
+});
+
+function addTask( action, parent ){
+
+let newTask = prompt("Enter the task");
+  
+let taskUI = buildUIforTask(newTask);
+
+    if("above"==action){
+  
+    parent.insertAdjacentHTML('beforebegin', taskUI);
+
+   }
+
+ if("below"==action){
+   
+   parent.insertAdjacentHTML('afterend', taskUI);
+
+   }
+
+}
+
+function buildUIforTask(newTask){
+
+
+const id = document.querySelectorAll(".task-items").length;
+let html = `<li id="${id}" >${newTask}<button data-action="above" > Add Above</button>
+  <button data-action="below"> Add below</button></li>`;
+
+return html;
+
+}
+</script></body>
+</html>
