@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Add or Remove Class</title>
+
+  <style id="jsbin-css">
+    .articles {
+      color: white
+    }
+
+    .active {
+
+      background: blue;
+
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <div class='articles'>
+
+    <p>This is an Article1</p>
+    <p>This is an Article2</p>
+
+  </div>
+
+
+  <script id="javascript">
+
+    const ele = document.querySelector('.articles');
+
+    console.log(ele.classList.add('active'));
+
+    //uncomment to see the class gets removed
+    //console.log(ele.classList.remove('active'))
+
+  </script>
+
+
+
+</body>
+
+</html>
